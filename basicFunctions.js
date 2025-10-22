@@ -9,3 +9,5 @@ function sumIndex(array) {
   };
   return newArray;
 }
+
+console.log(helloWorld());
