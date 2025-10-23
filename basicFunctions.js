@@ -4,7 +4,7 @@
 // É uma função de ordem superior (recebe outra função como argumento)
 // e é imutável (não altera o array original).
 // ====================================================================
-console.log('--MAP--')
+console.log('--MAP--');
 
 let sequencial = [0, 1, 2, 3];
 
@@ -34,7 +34,7 @@ console.log(mapNat);
 // Retorna um novo array apenas com os elementos que passam no teste.
 // É uma função pura e imutável (não altera o array original).
 // ====================================================================
-console.log('--FILTER--')
+console.log('--FILTER--');
 
 function odd(x) {
   return x % 2 === 0;
@@ -66,7 +66,7 @@ console.log(filterNat);
 // Recebe uma função com dois parâmetros: acumulador e valor atual.
 // É uma função de agregação e também de ordem superior.
 // ====================================================================
-console.log('--REDUCE--')
+console.log('--REDUCE--');
 
 let array = [38, 31, 20, 100, 6, 5];
 
