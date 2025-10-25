@@ -1,14 +1,30 @@
-function maior (x, y) {
+function maior(x, y) {
   return new Promise((resolve, reject) => {
-    if (x > y) {
-      setTimeout(() => resolve({ status: 200, msg: 'Maior' }), 15);
-    } else {
-      // rejeita com objeto simples (serializa fácil)
-      setTimeout(() => reject({ status: 400, msg: 'Valores inválidos' }), 15);
-    }
+    setTimeout(() => {
+      if (x > y) {
+        resolve({ status: 200, msg: 'Maior' });
+      } else {
+        reject({ status: 400, msg: 'Valores inválidos' });
+      }
+    }, 15);
   });
 }
 
-maior(1, 2)
-  .then(result => console.log(JSON.stringify(result)))
-  .catch(err => console.log(JSON.stringify(err)));
+(async () => {
+  console.log('1 - ' + new Date());
+
+  maior(1, 2)
+    .then(res => console.log(JSON.stringify(res)))
+    .catch(err => console.log(JSON.stringify(err)));
+
+  console.log('2 - ' + new Date());
+
+  try {
+    const res = await maior(1, 2);
+    console.log(JSON.stringify(res));
+  } catch (err) {
+    console.log(JSON.stringify(err));
+  }
+
+  console.log('3 - ' + new Date());
+})();
