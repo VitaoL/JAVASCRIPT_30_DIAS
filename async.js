@@ -20,7 +20,7 @@ function maior(x, y) {
   console.log('2 - ' + new Date());
 
   try {
-    const res = await maior(1, 2);
+    const res = await maior(2, 1);
     console.log(JSON.stringify(res));
   } catch (err) {
     console.log(JSON.stringify(err));
